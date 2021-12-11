@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+<h2>Registration</h2>
+<table>
+  <%= form_with(url: "/users/create", method: "post") do %>
+    <tr>
+      <td><%= label_tag(:name, 'Name') %></td>
+      <td><%= text_field_tag(:name) %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag(:email, 'Email') %></td>
+      <td><%= text_field_tag(:email) %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag(:password, 'Password') %></td>
+      <td><%= password_field_tag(:password) %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag(:password_confirmation, 'Confirm Password') %></td>
+      <td><%= password_field_tag(:password_confirmation) %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag(:region_id, 'Region') %></td>
+      <td><%= select_tag "region_id", options_for_select(@regions.collect {|r| [ r['title'], r['id'] ] }) %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag("Register") %></td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<h2>Login</h2>
+
+<table>
+  <%= form_with(url: "/users/login", method: "post") do %>
+    <tr>
+      <td><%= label_tag(:email, 'Email') %></td>
+      <td><%= text_field_tag(:email) %></td>
+    <tr>
+      <td><%= label_tag(:password, 'Password') %></td>
+      <td><%= password_field_tag(:password) %></td>
+    <tr>
+      <td>&nbsp;</td>
+      <td><%= submit_tag("Login") %></td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<br />
+<br />
+<br />
+<%= link_to 'Logout', '/users/logout' %>
