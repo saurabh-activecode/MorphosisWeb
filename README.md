@@ -1,24 +1,30 @@
 # README
+---
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application communicates with MorphosisAPI app via url http://127.0.0.1:3000
 
-Things you may want to cover:
+Please note to run this app with a port other than 3000
 
-* Ruby version
+## Deployment
+```sh
+Ruby Version 3.0.0
+Rails version 6.1.4.1
+```
 
-* System dependencies
+### Instructions
+```sh
+bundle install
+rails webpacker:install
+rails s -p3001
+```
 
-* Configuration
+### User Creds
+```sh
+US Region Users
+  bill@email.com  |  password
+  jim@email.com   |  password
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TH Region Users
+  will@email.com  |  password
+  paul@email.com  |  password
+```
