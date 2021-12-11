@@ -18,6 +18,8 @@ rails webpacker:install
 rails s -p3001
 ```
 
+Navigate to http://127.0.0.1:3001
+
 ### User Creds
 ```sh
 US Region Users
