@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     response = UserService.login(params[:email], params[:password])
     session[:token] = response[:token]
     session[:user] = UserService.get_user(response)
+    session[:region] = UserService.get_region(session[:user]['region_id'])
 
     redirect_to products_path
   end

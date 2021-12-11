@@ -10,6 +10,11 @@ class UserService
     response.parsed_response
   end
 
+  def self.get_region(region_id)
+    response = HTTParty.get("http://127.0.0.1:3000/region/#{region_id}")
+    response.parsed_response
+  end
+
   def self.login(email, password)
     options = {
       query: {
