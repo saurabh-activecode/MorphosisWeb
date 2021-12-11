@@ -1,11 +1,15 @@
 <h2>Products</h2>
 
-<% @products.each do |product| %>
-  <%= product['title'] %>&nbsp;&nbsp;&nbsp;
-  <%= product['description'] %>&nbsp;&nbsp;&nbsp;
-  <%= link_to 'Add Product', "/add_to_cart/#{product['id']}" %>
-  <br />
-<% end %>
+<table>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product['title'] %>&nbsp;&nbsp;&nbsp;</td>
+      <td><%= product['description'] %>&nbsp;&nbsp;&nbsp;</td>
+      <td><%= product['stock'] %> available &nbsp;&nbsp;&nbsp;</td>
+      <td><%= link_to 'Add Product', "/add_to_cart/#{product['id']}" %></td>
+    </tr>
+  <% end %>
+</table>
 
 
 <% if @cart.present? %>
